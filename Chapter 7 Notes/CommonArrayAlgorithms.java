@@ -84,6 +84,7 @@ public class CommonArrayAlgorithms
             if(array1[i] == valueToFind)
             {
                 out = i;
+                break;
             }
         }
         printArray(array1);
@@ -98,12 +99,12 @@ public class CommonArrayAlgorithms
      */
     public static void countLessThan( int limit )
     {
-        int[] array = createRandomArray( 10, 50 );
+        int[] array = createRandomArray( 10, 5 );
         int count = 0;
         for (int i = 0; i < array.length ; i++)
         {
             System.out.println(array[i]);
-            if (array[i] < limit - 1 )
+            if (array[i] < limit )
             {
                 count++;
             }
@@ -162,7 +163,7 @@ public class CommonArrayAlgorithms
     public static int[] reverseArray()
     {
         int[] array = createRandomArray( 10, 50 );
-        int[] newArray = createRandomArray( 10, 50);
+        int[] newArray = new int[10];
 
         int a = 0;
         for (int i = array.length-1; i>=0; i--)
