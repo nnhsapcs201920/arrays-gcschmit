@@ -64,7 +64,8 @@ public class CommonArrayAlgorithms
             output += array[i] + "|";
 
         }
-        output = output.substring(0, output.length()-2);
+        printArray(array);
+        output = output.substring(0, output.length()-1);
         System.out.println(output);
     }
 
