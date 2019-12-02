@@ -56,6 +56,42 @@ public class MedalCount
             System.out.println();
         }
     }
+    
+    /**
+     * Sums the medals for the specified country index (i.e., the specified row)
+     * 
+     * @param   countryIndex    the index of the country in the table whose medals to sum
+     * @return  the sum of medals for the specified country index
+     */
+    public int sumMedalsForCountry(int countryIndex)
+    {
+        int sum = 0;
+        
+        for(int col = 0; col < this.counts[countryIndex].length; col++)
+        {
+            sum += this.counts[countryIndex][col];
+        }
+        
+        return sum;
+    }
+    
+    /**
+     * Sums the medals for the specified medal index for all countries (i.e., the specified column)
+     * 
+     * @param   medalIndex  the index of the type of medal in the table to sum for all countries
+     * @return  the sum of medals of specified index for all countries
+     */
+    public int sumMedalsForType(int medalIndex)
+    {
+        int sum = 0;
+        
+        for(int row = 0; row < this.counts.length; row++)
+        {
+            sum += this.counts[row][medalIndex];
+        }
+        
+        return sum;
+    }
 }
 
 
