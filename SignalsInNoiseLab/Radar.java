@@ -12,7 +12,8 @@ public class Radar
     // (true represents a detected monster, which may be a false positive)
     private boolean[][] currentScan;
     
-    // value of each cell is incremented for each scan in which that cell triggers detection
+    // value of each cell is incremented for each scan in which that cell triggers
+    //      detection
     private int[][] accumulator;
     
     // location of the monster
@@ -51,17 +52,21 @@ public class Radar
     }
     
     /**
-     * Performs a scan of the radar. Noise is injected into the grid and the accumulator is updated.
+     * Performs a scan of the radar. Noise is injected into the grid and the accumulator
+     *      is updated.
      * 
      */
     public void scan()
     {
-        // algorithm for performing a scan:
-        //    1. set all cells in the currentScan 2D array to false
-        //    2. set the location of the monster in the currentScan 2D array
-        //    3. inject noise into the grid by invoking the injectNoise method
-        //    4. update the accumulator 2D array based on the state of the currentScan 2D array
-        //    5. increment the numScans instance variable
+        /*
+         *  algorithm for performing a scan:
+         *      1. set all cells in the currentScan 2D array to false
+         *      2. set the location of the monster in the currentScan 2D array
+         *      3. inject noise into the grid by invoking the injectNoise method
+         *      4. update the accumulator 2D array based on the state of the currentScan
+         *          2D array
+         *      5. increment the numScans instance variable
+         */
         
         
         //
@@ -82,15 +87,16 @@ public class Radar
         // remember the monster's location
         this.monsterLocation = loc;
         
-        // update the radar grid to show that something was detected at the specified location
+        // update the radar grid to show that something was detected at the specified
+        //      location
         currentScan[ this.monsterLocation.getRow() ][ this.monsterLocation.getCol() ] = true;
     }
     
      /**
      * Sets the probability that a given cell will generate a false detection
      * 
-     * @param   fraction    the probability that a given cell will generate a flase detection expressed
-     *                      as a fraction (must be >= 0 and < 1)
+     * @param   fraction    the probability that a given cell will generate a false
+     *                          detection expressed as a fraction (must be >= 0 and < 1)
      */
     public void setNoiseFraction(double fraction)
     {
@@ -110,7 +116,7 @@ public class Radar
 
     /**
      * Returns a Location object containing the row and column of the detected monster based on analyzing the
-     *  accumulator (not based on the monsterLocationRow and monsterLocationCol instance variables).
+     *  accumulator (not based on the monsterLocationinstance variable).
      * 
      * @return the location of the detected monster
      */
@@ -119,6 +125,7 @@ public class Radar
         //
         // !!! add code here !!!
         //
+        return null;
     }
     
     /**
@@ -155,9 +162,11 @@ public class Radar
     }
     
     /**
-     * Returns the number of scans that have been performed since the radar object was constructed
+     * Returns the number of scans that have been performed since the radar object was
+     *      constructed
      * 
-     * @return the number of scans that have been performed since the radar object was constructed
+     * @return the number of scans that have been performed since the radar object was
+     *      constructed
      */
     public int getNumScans()
     {
@@ -170,12 +179,15 @@ public class Radar
      */
     private void injectNoise()
     {
-        // Iterate through all cells in the currentScan 2D array to inject noise by setting false positives
-        // (detected monster where is there none) or false negatives (missed detection of a monster where is one).
-        // The noiseFraction instance variable is the probability that a given cell will be
-        // detected as a false positive or false negative. You must handle the cell containing the monster as a
-        // special case since, if noise is being injected into that cell, that is a false negative and the cell must
-        // be set to false.
+        /*
+         * Iterate through all cells in the currentScan 2D array to inject noise by
+         * setting false positives (detected monster where is there none) or false
+         * negatives (missed detection of a monster where is one). The noiseFraction
+         * instance variable is the probability that a given cell will be detected as
+         * a false positive or false negative. You must handle the cell containing the
+         * monster as a special case since, if noise is being injected into that cell,
+         * that is a false negative and the cell must be set to false.
+         */
         
         
         //
